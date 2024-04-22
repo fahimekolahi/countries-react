@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import CountriesBox from './components/countriesBox';
 function App() {
 
 
@@ -23,7 +22,7 @@ fetch('https://restcountries.com/v3.1/all')
   
 <>
 
-
+{countriesList.map(item=><CountriesBox name={item.name.common} image={item.flags.png}  continent={item.continents} status={item.status} population={item.population}/>)}
 
 
 
